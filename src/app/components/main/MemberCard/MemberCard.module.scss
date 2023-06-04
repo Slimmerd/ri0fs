@@ -1,0 +1,16 @@
+.member {
+    display: flex;
+    flex-flow: wrap;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(138, 132, 116, .5);
+
+
+    //TODO: Move
+    .small {
+        flex: 0 0 16.66%;
+    }
+
+    .large {
+        flex: 0 0 50%;
+    }
+}
