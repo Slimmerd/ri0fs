@@ -14,8 +14,12 @@ body {
 body {
 }
 
+ol li,
+ul li {
+  margin-left: 3rem;
+}
+
 a {
   color: inherit;
   text-decoration: none;
 }
-

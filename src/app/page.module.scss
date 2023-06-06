@@ -8,22 +8,45 @@
 
   font-family: var(--montserrat-font), sans-serif;
 
+  //background-image: radial-gradient(
+  //                rgba(0, 0, 0, 0.1) 8%,
+  //                transparent 8%
+  //);
+  //background-position: 0 0;
+  //background-size: 5vmin 5vmin;
+
   section {
     padding: 34px 0;
     width: 100%;
-      border-bottom: 1px solid rgba(138, 132, 116, .5);
-    }
+    border-bottom: 1px solid rgba(138, 132, 116, 0.5);
+  }
 
-         .heading {
-           flex: 0 0 16.66%;
-           max-width: 16.66%;
-           padding-right: 20px;
-         }
+  .heading {
+    flex: 0 0 16.66%;
+    max-width: 16.66%;
+    padding-right: 20px;
+  }
+
+  @media (max-width: 790px) {
+    .heading {
+      flex: 0 0 100%;
+      max-width: 100%;
+      padding-right: 20px;
+    }
+  }
+}
+
+.row {
+  display: flex;
+  flex-flow: row wrap;
+
+  @media (max-width: 790px) {
+    flex-flow: column wrap;
+  }
 }
 
 .block {
-  $vh: 8.51px;
-  height: 100vh;
+  $vh: 7.75px;
   height: calc($vh * 100);
 
   display: flex;
@@ -31,32 +54,34 @@
   overflow: hidden;
   position: relative;
 
+  @media (max-width: 790px) {
+    $vh: 5.75px;
+    height: calc($vh * 100);
+  }
 }
-.innerBlock {
-    width: fit-content;
-      overflow: visible;
-        
-        border-top: 1px solid;
-          border-bottom: 1px solid;
-    
-          .animated {
-            display: flex;
-            animation: slideLeft 15s linear infinite;
-          
-      h1 {
-        
-        margin-right: 32px;
-        
-        
-        white-space: nowrap;
-        font-size: 120px;
-      }
-            }
 
+.innerBlock {
+  width: fit-content;
+  overflow: visible;
+
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+
+  .animated {
+    display: flex;
+    animation: slideLeft 15s linear infinite;
+
+    h1 {
+      margin-right: 32px;
+
+      white-space: nowrap;
+      font-size: 120px;
+    }
+  }
 }
 
 .floatingImages {
-position: absolute;
+  position: absolute;
   top: 0;
   left: 20%;
   height: 80%;
@@ -65,44 +90,50 @@ position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 10;
+  z-index: 2;
 
-    .img1 {
-        position: relative;
-        top: 40%;
-      }
-    
-      .img2 {
-        position: relative;
-        top: 45%;
-        left: 0;
-      }
-    
-      .img3 {
-        position: relative;
-        bottom: 15%;
-        right: 5%;
-      }
+  .img1 {
+    position: relative;
+    top: 40%;
+  }
 
+  .img2 {
+    position: relative;
+    top: 45%;
+    left: 0;
+  }
+
+  .img3 {
+    position: relative;
+    bottom: 15%;
+    right: 5%;
+  }
+
+  @media (max-width: 790px) {
+    .img1,
+    .img2,
+    .img3 {
+      display: none;
+    }
+  }
 }
 
 @keyframes slideLeft {
   0% {
     transform: translateX(0);
-    /* Начальное положение */
   }
 
   100% {
     transform: translateX(-50%);
-    /* Конечное положение (сдвиг влево на 100% ширины) */
   }
 }
 
 .section2 {
   display: flex;
   padding: 81px 0 !important;
-  
-  .iota, .date {
+
+  .iota,
+  .date {
     font-size: 21px;
   }
 
@@ -115,10 +146,25 @@ position: absolute;
     margin-left: 8%;
   }
 
-  .description{
+  .description {
     flex: 0 0 60%;
     padding-left: 8%;
     font-size: 28px;
+  }
+
+  @media (max-width: 790px) {
+    flex-flow: column wrap;
+
+    .date,
+    .iota {
+      font-size: 18px;
+      flex: 0 0 16%;
+      margin: 0 0 8% 0;
+    }
+    .description {
+      padding-left: 0;
+      font-size: 21px;
+    }
   }
 }
 
@@ -138,8 +184,6 @@ position: absolute;
     padding-left: 8%;
     flex: 0 0 66.66%;
     max-width: 66.66%;
-    display: flex;
-    flex-flow: row wrap;
 
     .expedition {
       flex: 0 0 25%;
@@ -148,14 +192,22 @@ position: absolute;
       font-size: 21px;
     }
   }
+
+  @media (max-width: 790px) {
+    flex-flow: column wrap;
+    h1 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+
+    .expeditions {
+      padding-left: 0;
+      margin-top: 8%;
+    }
+  }
 }
 
-
 .section4 {
-
-  display: flex;
-  flex-flow: row wrap;
-
   .description1 {
     max-width: 100%;
     flex: 0 0 100%;
@@ -173,51 +225,52 @@ position: absolute;
       flex: 0 0 25%;
       max-width: 25%;
 
-      h1{
+      h1 {
         font-size: calc(52px + 4vw);
+      }
+    }
+  }
+
+  @media (max-width: 790px) {
+    .description1 {
+      font-size: 21px;
+    }
+
+    .experiences {
+      flex-flow: row wrap;
+
+      .experience {
+        flex: 0 0 50%;
+        max-width: 50%;
       }
     }
   }
 }
 
 .section5 {
-
-    display: flex;
-    flex-flow: row wrap;
-
-    .timetable {
-      flex: 0 0 100%;
-      display: flex;
-      justify-content: space-between ;
-      flex-flow: row wrap;
-    }
+  .timetable {
+    flex: 0 0 100%;
+    justify-content: space-between;
+  }
 }
 
 .section6 {
-  
-    display: flex;
-    flex-flow: row wrap;
-
-    .equipment{
-      flex: 0 0 100%;
-      display: flex;
-      justify-content: space-between;
-      flex-flow: row wrap;
-    }
+  .equipment {
+    flex: 0 0 100%;
+    justify-content: space-between;
+  }
 }
 
 .section7 {
   padding: 34px 0 81px 0 !important;
-  display: flex ;
-  flex-flow: row wrap;
-
 
   .goodTeam {
     flex: 0 0 33.33%;
+    padding-right: 10px;
 
-    h1{
-    font-size: 21px;
-    font-weight: 500;
+    h1 {
+      font-size: 21px;
+      font-weight: 500;
     }
   }
 
@@ -228,24 +281,37 @@ position: absolute;
 
   .members {
     margin-top: 40px;
-    flex:  0 0 100%;
-    
+    flex: 0 0 100%;
+  }
+
+  @media (max-width: 790px) {
+    .goodTeam {
+      padding-right: 0;
+      margin-bottom: 10px;
+
+      h1 {
+        font-size: 18px;
+        font-weight: 500;
+      }
+    }
+
+    .ourMembers {
+      font-size: 21px;
+    }
   }
 }
 
 .section8 {
   padding: 34px 0 81px 0 !important;
-  display: flex;
-  flex-flow: row wrap;
-
 
   .info {
+    padding-right: 20px;
     flex: 0 0 33.33%;
 
-   a {
-    font-size: 28px;
-    text-decoration: underline;
-   }
+    a {
+      font-size: 28px;
+      text-decoration: underline;
+    }
   }
 
   .socialMedia {
@@ -254,15 +320,31 @@ position: absolute;
     flex-flow: column;
 
     a {
-       &:hover {
+      &:hover {
         text-decoration: underline;
-       }
+      }
     }
 
     span {
       margin-top: 10px;
     }
+  }
 
+  @media (max-width: 790px) {
+    .info {
+      padding-right: 0px;
+      margin-bottom: 10px;
+      flex: 0 0 100%;
+
+      a {
+        font-size: 21px;
+        text-decoration: underline;
+      }
+    }
+
+    .socialMedia {
+      flex: 0 0 100%;
+    }
   }
 }
 

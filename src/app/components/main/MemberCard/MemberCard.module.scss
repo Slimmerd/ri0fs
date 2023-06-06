@@ -1,16 +1,29 @@
 .member {
-    display: flex;
-    flex-flow: wrap;
-    padding: 20px 0;
-    border-bottom: 1px solid rgba(138, 132, 116, .5);
+  display: flex;
+  flex-flow: wrap;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(138, 132, 116, 0.5);
 
+  //TODO: Move
+  .small {
+    flex: 0 0 16.66%;
+    padding-right: 10px;
+  }
 
-    //TODO: Move
+  .large {
+    flex: 0 0 50%;
+  }
+
+  @media (max-width: 790px) {
+    flex-flow: column wrap;
     .small {
-        flex: 0 0 16.66%;
+      flex: 0 0 30%;
+      padding-right: 10px;
     }
 
     .large {
-        flex: 0 0 50%;
+      margin-top: 15px;
+      flex: 0 0 100%;
     }
+  }
 }

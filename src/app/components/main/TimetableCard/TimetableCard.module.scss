@@ -1,21 +1,19 @@
 .main {
-  flex: 0 0 25%;
-  margin-right: 10px;
+  flex: 0 0 20%;
+  margin: 0 10px 20px 0;
 
   h1 {
-    font-size: 28px;
     margin-bottom: 10px;
+    font-size: 28px;
   }
 
-  div {
+  p {
     font-size: 21px;
   }
 
   @media (max-width: 790px) {
-    margin: 0 0 15px 0;
     h1 {
       font-size: 21px;
-       margin-bottom: 5px;
     }
 
     p {

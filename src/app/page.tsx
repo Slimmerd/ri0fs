@@ -1,27 +1,16 @@
 import Image from "next/image";
 import styles from "./page.module.scss";
-import NavCard from "./components/main/nav/card/NavCard";
-import { Montserrat, Roboto } from "next/font/google";
+import NavCard from "@/app/components/main/NavCard/NavCard";
 import TimetableCard, {
   TimetableCardI,
-} from "./components/main/timetable/TimetableCard";
+} from "@/app/components/main/TimetableCard/TimetableCard";
 import HeadingCard from "./components/main/HeadingCard/HeadingCard";
 import EquipmentCard from "./components/main/EquipmentCard/EquipmentCard";
 import MemberCard, {
   MemberCardI,
 } from "./components/main/MemberCard/MemberCard";
 import fs from "fs";
-
-const montserrat = Montserrat({
-  weight: ["400", "500", "700"],
-  subsets: ["latin", "cyrillic"],
-  variable: "--montserrat-font",
-});
-const roboto = Roboto({
-  weight: ["400", "500", "700"],
-  subsets: ["latin", "cyrillic"],
-  variable: "--roboto-font",
-});
+import { montserrat, roboto } from "./utils/fonts";
 
 export default function Home() {
   const teamMembers: MemberCardI[] = JSON.parse(
@@ -93,7 +82,7 @@ export default function Home() {
       <section className={styles.section3}>
         <h1>Наши предыдущие экспедиции →</h1>
 
-        <div className={styles.expeditions}>
+        <div className={`${styles.expeditions} ${styles.row}`}>
           <div className={styles.expedition}>RI0F</div>
           <div className={styles.expedition}>RI0FS&quot;16</div>
           <div className={styles.expedition}>RI0Z</div>
@@ -111,8 +100,8 @@ export default function Home() {
 
         <NavCard
           name={"Команда"}
-          imageLink={"/timetable.jpg"}
-          imageAlt={"timetable"}
+          imageLink={"/team.jpg"}
+          imageAlt={"team"}
           url={"/#team"}
         />
 
@@ -124,7 +113,7 @@ export default function Home() {
         />
       </section>
 
-      <section className={styles.section4}>
+      <section className={`${styles.section4} ${styles.row}`}>
         <div className={styles.heading}>
           <HeadingCard title={"Наш опыт"} />
         </div>
@@ -163,12 +152,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={styles.section5} id={"timetable"}>
+      <section className={`${styles.section5} ${styles.row}`} id={"timetable"}>
         <div className={styles.heading}>
           <HeadingCard title={"Расписание"} />
         </div>
 
-        <div className={styles.timetable}>
+        <div className={`${styles.timetable} ${styles.row}`}>
           {timetable.map((day, i) => (
             <TimetableCard
               title={day.title}
@@ -179,12 +168,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={styles.section6} id={"equipment"}>
+      <section className={`${styles.section6} ${styles.row}`} id={"equipment"}>
         <div className={styles.heading}>
           <HeadingCard title={"Оборудование"} />
         </div>
 
-        <div className={styles.equipment}>
+        <div className={`${styles.equipment} ${styles.row}`}>
           <EquipmentCard title={"Антенны"}>
             <p>DX-77</p>
             <p>AD-223</p>
@@ -202,7 +191,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={styles.section7} id={"team"}>
+      <section className={`${styles.section7} ${styles.row}`} id={"team"}>
         <div className={styles.heading}>
           <HeadingCard title={"Команда"} />
         </div>
@@ -234,7 +223,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={styles.section8}>
+      <section className={`${styles.section8} ${styles.row}`}>
         <div className={styles.heading}>
           <HeadingCard title="Связь с нами" />
         </div>
