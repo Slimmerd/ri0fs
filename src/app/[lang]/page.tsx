@@ -4,21 +4,33 @@ import NavCard from "@/app/components/main/NavCard/NavCard";
 import TimetableCard, {
   TimetableCardI,
 } from "@/app/components/main/TimetableCard/TimetableCard";
-import HeadingCard from "./components/main/HeadingCard/HeadingCard";
-import EquipmentCard from "./components/main/EquipmentCard/EquipmentCard";
+import HeadingCard from "@/app/components/main/HeadingCard/HeadingCard";
+import EquipmentCard from "@/app/components/main/EquipmentCard/EquipmentCard";
 import MemberCard, {
   MemberCardI,
-} from "./components/main/MemberCard/MemberCard";
+} from "@/app/components/main/MemberCard/MemberCard";
 import fs from "fs";
-import { montserrat, roboto } from "./utils/fonts";
+import { montserrat, roboto } from "@/app/utils/fonts";
+import { useTranslation } from "../i18n";
 
-export default function Home() {
-  const teamMembers: MemberCardI[] = JSON.parse(
-    fs.readFileSync(process.cwd() + "/data/team.json", "utf-8")
-  );
-  const timetable: TimetableCardI[] = JSON.parse(
-    fs.readFileSync(process.cwd() + "/data/timetable.json", "utf-8")
-  );
+const Home = async ({ params: { lang } }: { params: { lang: string } }) => {
+  const { t } = await useTranslation(lang, "main");
+
+  /* @ts-ignore */
+  const nTimetable: TimetableCardI[] = t("block5.dates", {
+    returnObjects: true,
+  });
+  const nTeam: MemberCardI[] = t("block7.members", { returnObjects: true });
+
+  const nAntennas: string[] = t("block6.antennas.equipment", {
+    returnObjects: true,
+  });
+  const nAmplifiers: string[] = t("block6.amplifier.equipment", {
+    returnObjects: true,
+  });
+  const nTransceivers: string[] = t("block6.transceivers.equipment", {
+    returnObjects: true,
+  });
 
   return (
     <main
@@ -70,43 +82,38 @@ export default function Home() {
           <p>RR-15-06</p>
           <p>SL-25</p>
         </div>
-        <div className={styles.date}>5-18 Августа</div>
+        <div className={styles.date}>{t("block1.dates")}</div>
 
-        <div className={styles.description}>
-          Мы, представляющие команду радиолюбителей, в очередной раз хотим
-          анонсировать новую экспедицию на прекрасный остров Шикотан, чтобы
-          расширить границы нашей связи и погрузиться в мир приключений!
-        </div>
+        <div className={styles.description}>{t("block1.intro")}</div>
       </section>
 
       <section className={styles.section3}>
-        <h1>Наши предыдущие экспедиции →</h1>
+        <h1>{t("block2.previous")} →</h1>
 
         <div className={`${styles.expeditions} ${styles.row}`}>
-          <div className={styles.expedition}>RI0F</div>
+          <div className={styles.expedition}>RI0F&quot;14</div>
           <div className={styles.expedition}>RI0FS&quot;16</div>
-          <div className={styles.expedition}>RI0Z</div>
-          <div className={styles.expedition}>RI0FF</div>
+          <div className={styles.expedition}>RI0FF&quot;21</div>
         </div>
       </section>
 
       <section className={styles.nav}>
         <NavCard
-          name={"Расписание"}
+          name={t("block3.timetable")}
           imageLink={"/timetable.jpg"}
           imageAlt={"timetable"}
           url={"/#timetable"}
         />
 
         <NavCard
-          name={"Команда"}
+          name={t("block3.team")}
           imageLink={"/team.jpg"}
           imageAlt={"team"}
           url={"/#team"}
         />
 
         <NavCard
-          name={"Оборудование"}
+          name={t("block3.equipment")}
           imageLink={"/equipment.jpg"}
           imageAlt={"equipment"}
           url={"/#equipment"}
@@ -115,52 +122,47 @@ export default function Home() {
 
       <section className={`${styles.section4} ${styles.row}`}>
         <div className={styles.heading}>
-          <HeadingCard title={"Наш опыт"} />
+          <HeadingCard title={t("block4.heading")} />
         </div>
 
         <div className={styles.description1}>
-          <p>
-            С 2014 года наша команда активно организует экспедиции на Дальнем
-            Востоке, включая удивительные Курильские острова, такие как Анучина,
-            Шикотан, Итуруп, а также труднодоступный остров Беринга,
-            расположенный неподалеку от полуострова Камчатка.
-          </p>
+          <p>{t("block4.intro")}</p>
         </div>
 
         <div className={styles.experiences}>
           <div className={styles.experience}>
             <div>
               <h1>9+</h1>
-              <p>Лет проводим экспедиции</p>
+              <p>{t("block4.exp")}</p>
             </div>
           </div>
 
           <div className={styles.experience}>
             <h1>5+</h1>
-            <p>Экспедиций на дальнем востоке</p>
+            <p>{t("block4.farEast")}</p>
           </div>
 
           <div className={styles.experience}>
             <h1>50+</h1>
-            <p>Экспедиций по миру</p>
+            <p>{t("block4.world")}</p>
           </div>
 
           <div className={styles.experience}>
             <h1>2</h1>
-            <p>Пострадавшие антенны :D</p>
+            <p>{t("block4.dmg")}</p>
           </div>
         </div>
       </section>
 
       <section className={`${styles.section5} ${styles.row}`} id={"timetable"}>
         <div className={styles.heading}>
-          <HeadingCard title={"Расписание"} />
+          <HeadingCard title={t("block5.heading")} />
         </div>
 
         <div className={`${styles.timetable} ${styles.row}`}>
-          {timetable.map((day, i) => (
+          {nTimetable.map((day, i) => (
             <TimetableCard
-              title={day.title}
+              day={day.day}
               description={day.description}
               key={i}
             />
@@ -170,48 +172,44 @@ export default function Home() {
 
       <section className={`${styles.section6} ${styles.row}`} id={"equipment"}>
         <div className={styles.heading}>
-          <HeadingCard title={"Оборудование"} />
+          <HeadingCard title={t("block6.heading")} />
         </div>
 
         <div className={`${styles.equipment} ${styles.row}`}>
-          <EquipmentCard title={"Антенны"}>
-            <p>DX-77</p>
-            <p>AD-223</p>
-            <p>Вертикал 30/40</p>
+          <EquipmentCard title={t("block6.antennas.title")}>
+            {nAntennas.map((antenna, i) => (
+              <p key={i}>{antenna}</p>
+            ))}
           </EquipmentCard>
 
-          <EquipmentCard title={"Трансиверы"}>
-            <p>icom-3000</p>
-            <p>icom-765</p>
+          <EquipmentCard title={t("block6.transceivers.title")}>
+            {nTransceivers.map((tranciever, i) => (
+              <p key={i}>{tranciever}</p>
+            ))}
           </EquipmentCard>
 
-          <EquipmentCard title={"Усилитель"}>
-            <p>acom-1000</p>
+          <EquipmentCard title={t("block6.amplifier.title")}>
+            {nAmplifiers.map((amplifier, i) => (
+              <p key={i}>{amplifier}</p>
+            ))}
           </EquipmentCard>
         </div>
       </section>
 
       <section className={`${styles.section7} ${styles.row}`} id={"team"}>
         <div className={styles.heading}>
-          <HeadingCard title={"Команда"} />
+          <HeadingCard title={t("block7.heading")} />
         </div>
 
         <div className={styles.goodTeam}>
-          <h1>
-            Хорошая команда - гордость каждого радиолюбителя, который
-            присоединился к нашим захватывающим экспедициям.
-          </h1>
+          <h1>{t("block7.description")}</h1>
         </div>
         <div className={styles.ourMembers}>
-          <p>
-            Наши участники - настоящие профессионалы, объединенные любовью к
-            радиолюбительству. С их помощью каждая экспедиция становится
-            незабываемым приключением, которым мы готовы поделиться с вами.
-          </p>
+          <p>{t("block7.description2")}</p>
         </div>
 
         <div className={styles.members}>
-          {teamMembers.map((member, i) => (
+          {nTeam.map((member, i) => (
             <MemberCard
               call={member.call}
               name={member.name}
@@ -225,21 +223,16 @@ export default function Home() {
 
       <section className={`${styles.section8} ${styles.row}`}>
         <div className={styles.heading}>
-          <HeadingCard title="Связь с нами" />
+          <HeadingCard title={t("block8.heading")} />
         </div>
 
         <div className={styles.info}>
-          <p>
-            Вы можете связаться с нашей командой экспедиции, а также следить за
-            новостями на сайте и социальных сетях, чтобы узнать больше о нашем
-            путешествии. Мы всегда рады общению с единомышленниками и любителями
-            радиолюбительства.
-          </p>
+          <p>{t("block8.description")}</p>
         </div>
         <div className={styles.info}>
           <p>
-            <a href="mailto:das@das.ru">
-              <span>das@das.ru</span>
+            <a href="mailto:ra6mg@mail.ru">
+              <span>ra6mg@mail.ru</span>
             </a>
           </p>
         </div>
@@ -247,10 +240,10 @@ export default function Home() {
         <div className={styles.socialMedia}>
           <a href="">Telegram ↗</a>
           <a href="">Twitter* ↗</a>
-
-          <span>*Запрещен в РФ</span>
         </div>
       </section>
     </main>
   );
-}
+};
+
+export default Home;

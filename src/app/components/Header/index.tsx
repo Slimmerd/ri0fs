@@ -4,6 +4,8 @@ import styles from "./Header.module.scss";
 import { Monoton } from "next/font/google";
 import HeaderLink from "@/app/components/Header/HeaderLink/HeaderLink";
 import Link from "next/link";
+import LanguageButton from "./Language";
+import { useTranslation } from "@/app/i18n/client";
 
 const monoton = Monoton({
   weight: "400",
@@ -11,8 +13,10 @@ const monoton = Monoton({
   variable: "--monoton-font",
 });
 
-export const Header = () => {
+const Header = ({ lang }: { lang: string }) => {
   const [isOpen, setOpen] = useState(false);
+  const { t } = useTranslation(lang, "header");
+
   return (
     <header className={styles.container}>
       <Link href={"/"}>
@@ -30,28 +34,44 @@ export const Header = () => {
           {/* <HeaderLink url={"team"} title={"Команда"} />
           <HeaderLink url={"team"} title={"Техника"} />
           <HeaderLink url={"team"} title={"Расписание"} /> */}
-          <HeaderLink url={"news"} title={"Новости"} setOpen={setOpen} />
+          <HeaderLink
+            url={"news"}
+            title={t("news")}
+            setOpen={setOpen}
+            locale={lang}
+          />
           <HeaderLink
             url={"donate"}
-            title={"Пожертвования"}
+            title={t("donate")}
             setOpen={setOpen}
+            locale={lang}
           />
-          <HeaderLink url={"qsl"} title={"QSL"} setOpen={setOpen} />
-          <HeaderLink url={"log"} title={"Online log"} setOpen={setOpen} />
-          <HeaderLink url={"eng"} title={"English"} setOpen={setOpen} />
+          <HeaderLink
+            url={"qsl"}
+            title={"QSL"}
+            setOpen={setOpen}
+            locale={lang}
+          />
+          <HeaderLink
+            url={"news/log"}
+            title={"Online log"}
+            setOpen={setOpen}
+            locale={lang}
+          />
+          <LanguageButton lang={lang} />
         </nav>
         <button
-          className={`${styles["button--inner"]} ${styles.menuButton}`}
+          className={`${styles["button--inner"]}`}
           onClick={() => setOpen(!isOpen)}
         >
-          Закрыть
+          {t("close")}
         </button>
       </div>
       <button
-        className={`${styles["button--outer"]} ${styles.menuButton}`}
+        className={`${styles["button--outer"]}`}
         onClick={() => setOpen(!isOpen)}
       >
-        Меню
+        {t("menu")}
       </button>
     </header>
   );

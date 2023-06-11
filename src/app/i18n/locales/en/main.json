@@ -1,0 +1,121 @@
+{
+  "block1": {
+    "dates": "5-18 August",
+    "intro": "We, representing a team of radio amateurs, once again want to announce a new expedition to the beautiful island of Shikotan in order to expand the boundaries of our communication and plunge into the world of adventure!"
+  },
+  "block2": {
+    "previous": "Our previous expeditions"
+  },
+  "block3": {
+    "team": "Team",
+    "timetable": "Timetable",
+    "equipment": "Equipment"
+  },
+  "block4": {
+    "heading": "Experience",
+    "intro": "Since 2014, our team has been actively organising expeditions in the Far East, including the amazing Kuril Islands, such as Anuchina, Shikotan and Iturup.",
+    "exp": "Years of organising expeditions",
+    "farEast": "Expeditions in Far East",
+    "world": "Expeditions around the globe",
+    "dmg": "Damaged equipment"
+  },
+  "block5": {
+    "heading": "Timetable",
+    "dates": [
+      {
+        "day": "5 August",
+        "description": "Departure from Moscow at 23:05"
+      },
+      {
+        "day": "6 August",
+        "description": "Arrival in Sakhalin and relocation to Korsakov"
+      },
+      {
+        "day": "7 August",
+        "description": "Departure by ship from the port of Korsakov to the island of Shikotan"
+      },
+      {
+        "day": "8 August",
+        "description": "Arrival at Shikotan Island"
+      },
+      {
+        "day": "9 August",
+        "description": "Installation of antennas and equipment"
+      },
+      {
+        "day": "9-17 August",
+        "description": "On-air work"
+      },
+      {
+        "day": "17 August",
+        "description": "Dismantling of antennas and equipment"
+      },
+      {
+        "day": "18 August",
+        "description": "Departure to Sakhalin"
+      }
+    ]
+  },
+  "block6": {
+    "heading": "Equipment",
+    "antennas": {
+      "title": "Antennas",
+      "equipment": ["DX-77", "AD-223", "Vertical 30/40"]
+    },
+    "transceivers": {
+      "title": "Transceivers",
+      "equipment": ["icom-3000", "icon-765"]
+    },
+    "amplifier": {
+      "title": "Amplifier",
+      "equipment": ["acom-100"]
+    }
+  },
+  "block7": {
+    "heading": "Team",
+    "description": "A good team is the pride of every radio amateur who has joined our exciting expeditions.",
+    "description2": "Our members are true professionals, united by love for amateur radio. With their help, each expedition becomes an unforgettable adventure that we are ready to share with you.",
+    "members": [
+      {
+        "call": "RX3F",
+        "name": "Sergey Pavlov",
+        "role": "Operator",
+        "description": "On-air operator actively involved in the transmission and reception of signals through radio stations. He is proficient in various on-air techniques and closely monitors communications to ensure our team is constantly present and active on the wave."
+      },
+      {
+        "call": "RU3FS",
+        "name": "Alexander Kostikov",
+        "role": "Expert psychologist",
+        "description": "Our expert psychologist is able to feel the mood of the team and help maintain positive energy. Whether after a long day of expedition or during a celebration of achievement, he knows how to create an atmosphere of joy and relaxation. At the same time, it also respects the responsible consumption of alcohol, reminding you to drink in moderation and promoting healthy and safe habits."
+      },
+      {
+        "call": "RN3BL",
+        "name": "Vladimir Blinkov",
+        "role": "Operator",
+        "description": "Experienced operator who masterfully masters the technique of transmitting messages using Morse code. It does an excellent job of transmitting and receiving signals, providing reliable communication and participation in the air."
+      },
+      {
+        "call": "R6MG",
+        "name": "Andrey Silin",
+        "role": "Logistics Coordinator",
+        "description": "Our tireless logistics coordinator. He organizes all the details and details of our expeditions, including transport, accommodation and meals. His organizational skills ensure that everything runs smoothly and the team can focus on their amateur radio adventures."
+      },
+      {
+        "call": "R7MR",
+        "name": "Yuri Naletko",
+        "role": "Technical Specialist",
+        "description": "Our expert in the technical aspects of amateur radio. He is well versed in the equipment and is always ready to help with the setup and maintenance of radios. Thanks to his knowledge and experience, we are always on top during expeditions."
+      },
+      {
+        "call": "UA0FAM",
+        "name": "Vladimir Cheremitsky",
+        "role": "Navigator",
+        "description": "Our navigator and true expert on Shikotan Island. He has a deep knowledge of every trail and corner of the island. Thanks to his experience, we always arrive at the right place accurately and safely, without missing a single interesting sight. Vladimir helps us experience the true beauty and spirit of Shikotan by sharing his knowledge of its history, natural features and unique places."
+      }
+    ]
+  },
+  "block8": {
+    "heading": "Contact us",
+    "description": "You can contact our expedition team and follow the website and social media to learn more about our journey. We are always glad to communicate with like-minded people and fans of amateur radio."
+  }
+}

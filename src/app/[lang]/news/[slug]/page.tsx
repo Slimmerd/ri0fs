@@ -74,7 +74,7 @@ export default async function PostRoute({
 
   if (data === null) return <h2>no post found</h2>;
   return (
-    <div className={`${styles.main} ${montserrat.variable}`}>
+    <main className={`${styles.main} ${montserrat.variable}`}>
       <section className={styles.heading}>
         <h1>{newData.title}</h1>
 
@@ -87,6 +87,6 @@ export default async function PostRoute({
       <section className={styles.content}>
         <MdxContent source={newData.content} />
       </section>
-    </div>
+    </main>
   );
 }

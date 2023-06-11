@@ -1,6 +1,7 @@
-import "./globals.scss";
+import "../globals.scss";
 import { Inter } from "next/font/google";
 import Header from "@/app/components/Header";
+import { languages } from "../i18n/settings";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -8,15 +9,24 @@ export const metadata = {
   title: "RI0FS",
   description: "Экспедиция 5-18 августа",
 };
+
+export async function generateStaticParams() {
+  return languages.map((lng) => ({ lng }));
+}
+
 export default function RootLayout({
   children,
+  params: { lang },
 }: {
   children: React.ReactNode;
+  params: {
+    lang: string;
+  };
 }) {
   return (
-    <html>
+    <html lang={lang}>
       <body className={inter.className}>
-        <Header />
+        <Header lang={lang} />
         {children}
       </body>
     </html>

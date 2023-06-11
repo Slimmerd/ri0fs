@@ -5,13 +5,14 @@ import Link from "next/link";
 interface HeaderLinkI {
   url: string;
   title: string;
+  locale: string;
   setOpen: Dispatch<SetStateAction<boolean>>;
 }
 
-const HeaderLink: React.FC<HeaderLinkI> = ({ url, title, setOpen }) => {
+const HeaderLink: React.FC<HeaderLinkI> = ({ url, title, locale, setOpen }) => {
   return (
     <div className={styles.link}>
-      <Link href={`/${url}`} onClick={() => setOpen(false)}>
+      <Link href={`/${locale}/${url}`} onClick={() => setOpen(false)}>
         <span>{title}</span>
       </Link>
     </div>
