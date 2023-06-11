@@ -64,11 +64,11 @@
     },
     "transceivers": {
       "title": "Трансиверы",
-      "equipment": ["icom-3000", "icon-765"]
+      "equipment": ["icom-7300", "icom-765"]
     },
     "amplifier": {
       "title": "Усилитель",
-      "equipment": ["acom-100"]
+      "equipment": ["acom-1000"]
     }
   },
   "block7": {

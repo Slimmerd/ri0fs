@@ -21,7 +21,7 @@ const NewsCard: React.FC<NewsCardI> = ({ article }) => {
           {article.img ? (
             <Image src={article.img} alt={"Post Image"} fill />
           ) : (
-            <Image src={"/stab.jpg"} alt={"stab"} fill />
+            <Image src={"/assets/stab.jpg"} alt={"stab"} fill />
           )}
         </div>
         <p className="">{formatDate(article.date)}</p>

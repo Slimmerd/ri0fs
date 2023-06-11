@@ -351,4 +351,6 @@
 .nav {
   display: flex;
   flex-flow: row;
+
+  overflow-x: scroll;
 }

@@ -9,7 +9,6 @@ import EquipmentCard from "@/app/components/main/EquipmentCard/EquipmentCard";
 import MemberCard, {
   MemberCardI,
 } from "@/app/components/main/MemberCard/MemberCard";
-import fs from "fs";
 import { montserrat, roboto } from "@/app/utils/fonts";
 import { useTranslation } from "../i18n";
 
@@ -64,13 +63,28 @@ const Home = async ({ params: { lang } }: { params: { lang: string } }) => {
 
           <div className={styles.floatingImages}>
             <div className={styles.img1}>
-              <Image src={"/kunashir.png"} alt={""} height={311} width={329} />
+              <Image
+                src={"/assets/kunashir.png"}
+                alt={""}
+                height={311}
+                width={329}
+              />
             </div>
             <div className={styles.img2}>
-              <Image src={"/shikotan.png"} alt={""} width={108} height={88} />
+              <Image
+                src={"/assets/shikotan.png"}
+                alt={""}
+                width={108}
+                height={88}
+              />
             </div>
             <div className={styles.img3}>
-              <Image src={"/iturup.png"} alt={""} width={561} height={442} />
+              <Image
+                src={"/assets/iturup.png"}
+                alt={""}
+                width={561}
+                height={442}
+              />
             </div>
           </div>
         </div>
@@ -100,21 +114,21 @@ const Home = async ({ params: { lang } }: { params: { lang: string } }) => {
       <section className={styles.nav}>
         <NavCard
           name={t("block3.timetable")}
-          imageLink={"/timetable.jpg"}
+          imageLink={"/assets/timetable.jpg"}
           imageAlt={"timetable"}
           url={"/#timetable"}
         />
 
         <NavCard
           name={t("block3.team")}
-          imageLink={"/team.jpg"}
+          imageLink={"/assets/team.jpg"}
           imageAlt={"team"}
           url={"/#team"}
         />
 
         <NavCard
           name={t("block3.equipment")}
-          imageLink={"/equipment.jpg"}
+          imageLink={"/assets/equipment.jpg"}
           imageAlt={"equipment"}
           url={"/#equipment"}
         />
