@@ -115,12 +115,8 @@ console.log(foo(5));
 
 ## Images
 
-![Stab](/stab.jpg)
+![Stab](/assets/stab.jpg)
 ![Minion](https://octodex.github.com/images/minion.png)
 ![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
 
 Like links, Images also have a footnote style syntax
-
-![Alt text][id]
-
-[id]: https://octodex.github.com/images/dojocat.jpg "The Dojocat"
