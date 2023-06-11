@@ -8,15 +8,11 @@ import { MdxContent } from "@/app/utils/mdx-content";
 import { montserrat } from "@/app/utils/fonts";
 import { formatDate } from "@/app/utils/api-helpers";
 import remarkUnwrapImages from "remark-unwrap-images";
-// async function getMetaData(slug: string) {
-//     const response = await fetchAPI(path, urlParamsObject, options);
-//     return response.data;
-// }
-//
+
 // export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
 //     const meta = await getMetaData(params.slug);
 //     const metadata = meta[0].attributes.seo;
-//
+
 //     return {
 //         title: metadata.metaTitle,
 //         description: metadata.metaDescription,

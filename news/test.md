@@ -1,7 +1,7 @@
 ---
 title: "Test MD"
 excerpt: "Список категорий"
-public: "true"
+public: "false"
 date: "2022-06-10T05:35:07.322Z"
 author: "Андрей Силин"
 ---
