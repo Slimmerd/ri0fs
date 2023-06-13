@@ -2,6 +2,7 @@ import "../globals.scss";
 import { Inter } from "next/font/google";
 import Header from "@/app/components/Header";
 import { languages } from "../i18n/settings";
+import GTAG from "../gtag";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,6 +26,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang={lang}>
+      <GTAG />
       <body className={inter.className}>
         <Header lang={lang} />
         {children}
