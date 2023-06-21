@@ -16,7 +16,12 @@ const NavCard: React.FC<NavCardI> = ({ name, imageAlt, imageLink, url }) => {
       <Link href={url} passHref>
         <h1>{name} ↗</h1>
         <div className={styles.imgWrapper}>
-          <Image src={imageLink} alt={imageAlt} fill={true} />
+          <Image
+            src={imageLink}
+            alt={imageAlt}
+            fill={true}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
         </div>
       </Link>
     </div>

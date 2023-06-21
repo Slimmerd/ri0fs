@@ -9,12 +9,11 @@ export async function generateMetadata({
 }: {
   params: { lang: string };
 }) {
-
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const { t } = await useTranslation(lang, "donate");
 
-  /* @ts-ignore */
   return {
+    /* @ts-ignore */
     title: t("title"),
     description: t("description"),
     openGraph: {
@@ -51,7 +50,9 @@ const DonatePage = async ({
 
             <div className={styles.card}>
               <h1>PayPal</h1>
-              <p>Soon</p>
+              <p>
+                <a href="https://www.paypal.com/paypalme/ri0fs">Paypal Me</a>
+              </p>
             </div>
           </div>
         </section>
