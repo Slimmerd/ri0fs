@@ -34,6 +34,12 @@ const Header = ({ lang }: { lang: string }) => {
           {/* <HeaderLink url={"team"} title={"Команда"} />
           <HeaderLink url={"team"} title={"Техника"} />
           <HeaderLink url={"team"} title={"Расписание"} /> */}
+            <HeaderLink
+                url={""}
+                title={t("main")}
+                setOpen={setOpen}
+                locale={lang}
+            />
           <HeaderLink
             url={"news"}
             title={t("news")}
