@@ -87,12 +87,6 @@
         "description": "On-air operator actively involved in the transmission and reception of signals through radio stations. He is proficient in various on-air techniques and closely monitors communications to ensure our team is constantly present and active on the wave."
       },
       {
-        "call": "RU3FS",
-        "name": "Alexander Kostikov",
-        "role": "Expert psychologist",
-        "description": "Our expert psychologist is able to feel the mood of the team and help maintain positive energy. Whether after a long day of expedition or during a celebration of achievement, he knows how to create an atmosphere of joy and relaxation."
-      },
-      {
         "call": "RN3BL",
         "name": "Vladimir Blinkov",
         "role": "Operator",

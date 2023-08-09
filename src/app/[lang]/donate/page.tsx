@@ -58,6 +58,7 @@ const DonatePage = async ({
         </section>
         <section>
           <HeadingCard title={t("sponsors")} />
+          <h1>RU3FS</h1>
         </section>
       </main>
     </>
