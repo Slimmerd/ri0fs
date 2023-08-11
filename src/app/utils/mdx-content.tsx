@@ -32,6 +32,10 @@ const CustomImage = (props: any) => {
   );
 };
 
+const CustomVideo = (props: any) => {
+  return <div className={styles.img}>{props}</div>;
+};
+
 /** Place your custom MDX components here */
 const MdxComponents = {
   h1: (props: React.HTMLProps<HTMLHeadingElement>) => (
@@ -57,6 +61,7 @@ const MdxComponents = {
   ),
   a: CustomLink,
   img: CustomImage,
+  video: CustomVideo,
 };
 
 export function MdxContent({ source }: MdxContentProps) {
