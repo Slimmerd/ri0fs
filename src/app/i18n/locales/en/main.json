@@ -109,6 +109,12 @@
         "name": "Vladimir Cheremitsky",
         "role": "Navigator",
         "description": "Our navigator and true expert on Shikotan Island. He has a deep knowledge of every trail and corner of the island. Thanks to his experience, we always arrive at the right place accurately and safely, without missing a single interesting sight. Vladimir helps us experience the true beauty and spirit of Shikotan by sharing his knowledge of its history, natural features and unique places."
+      },
+      {
+        "call": "R6LGT",
+        "name": "Daniil Silin",
+        "role": "Social media and finance manager",
+        "description": "Our manager in social media and assistant in financial matters"
       }
     ]
   },
