@@ -13,7 +13,7 @@ img: "/assets/news/cw.jpg"
 
 Our team shares some photos from workplace
 
-# CW
+# CW, FT8 and Harbour
 
 ![CW](/assets/news/cw.jpg)
 ![FT8](/assets/news/ft8.jpg)
