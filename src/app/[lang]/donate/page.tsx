@@ -58,6 +58,10 @@ const DonatePage = async ({
         </section>
         <section>
           <HeadingCard title={t("sponsors")} />
+          <h1>R2DXU</h1>
+          <h1>ON8AH</h1>
+          <h1>HB9KOG</h1>
+          <h1>DL1AXX</h1>
           <h1>RA1WU</h1>
           <h1>RX3AEX</h1>
           <h1>DL1BWU</h1>
